@@ -10,8 +10,9 @@
   </head>
 
   <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-    <%= yield %>
+  <%= current_user ? render('shared/authorized_user_navbar') : render('shared/guest_user_navbar') %>
+  <%= render 'shared/alert' %>
+
+  <%= yield %>
   </body>
 </html>
