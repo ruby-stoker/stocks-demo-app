@@ -4,4 +4,5 @@ class Stock < ApplicationRecord
   validates :price, presence: true, numericality: { greater_than_or_equal_to: 1, only_integer: true }
   validates :interest, presence: true, numericality: { greater_than: 0 }
   belongs_to :user
+  paginates_per 20
 end

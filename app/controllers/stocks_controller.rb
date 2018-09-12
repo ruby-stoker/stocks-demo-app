@@ -3,8 +3,7 @@ class StocksController < ApplicationController
   before_action :set_stock, only: %i[edit update show destroy]
 
   def index
-    # TODO, IMPLEMENT PAGINATION
-    @stocks = current_user ? current_user.stocks : []
+    @stocks = current_user ? current_user.stocks.page(params[:page]) : []
   end
 
   def new
