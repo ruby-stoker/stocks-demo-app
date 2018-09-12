@@ -7,14 +7,13 @@ function initChart() {
 }
 
 function stockCalculations() {
-    const stockData = $('#stock_data').data('stock');
-    const duration = stockData.duration;
-    const price = stockData.price;
-    const interest = stockData.interest / 100;
-    const compoundedPerYear = 12;
-    let chartData = Array.from({length: duration}, function (v, year) {
+    var stockData = $('#stock_data').data('stock');
+    var duration = stockData.duration;
+    var price = stockData.price;
+    var compoundedPerYear = 12;
+    var chartData = Array.from({length: duration}, function (v, year) {
         year++;
-        let balance = price * Math.pow(1 + interest / compoundedPerYear, compoundedPerYear * year);
+        var balance = price * Math.pow(1 + interest / compoundedPerYear, compoundedPerYear * year);
         balance = Math.round(balance * 100) / 100;
         return [year, balance];
     });
