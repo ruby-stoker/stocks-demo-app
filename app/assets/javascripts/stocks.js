@@ -9,6 +9,7 @@ function initChart() {
 function stockCalculations() {
     var stockData = $('#stock_data').data('stock');
     var duration = stockData.duration;
+    var interest = stockData.interest / 100;
     var price = stockData.price;
     var compoundedPerYear = 12;
     var chartData = Array.from({length: duration}, function (v, year) {
